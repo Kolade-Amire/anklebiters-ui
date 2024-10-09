@@ -1,21 +1,29 @@
 import Navbar from "./components/Navbar.tsx";
 import Hero from "./components/Hero.tsx";
 import Card from "./components/Card.tsx";
+import data from "./data/data.ts"
 
 
 export default function App() {
+
+    const cardsData = data.map(item => {
+            return (
+                <Card
+                    key={item.id}
+                    item={item}
+                />
+            )
+        }
+    )
+
+
     return (
         <div>
             <Navbar/>
             <Hero/>
-            <Card
-                img="katie-zaferes.png"
-                rating={5.0}
-                reviewCount={6}
-                country="USA"
-                title="Life Lessons with Katie Zaferes"
-                price={136}
-            />
+            <section className="cards--list">
+                {cardsData}
+            </section>
         </div>
     )
 }
