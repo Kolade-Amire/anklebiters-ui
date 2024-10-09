@@ -6,8 +6,8 @@ import Card from "./components/Card.tsx";
 export default function App() {
     return (
         <div>
-            <Navbar />
-            <Hero />
+            <Navbar/>
+            <Hero/>
             <Card/>
         </div>
     )
